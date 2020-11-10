@@ -21,7 +21,7 @@ public class MyGdxGame extends ApplicationAdapter {
         batch = new SpriteBatch();
         random = new Random();
         tank = new Tank();
-        target = new Target();
+         target = new Target();
     }
 
     @Override
@@ -32,16 +32,16 @@ public class MyGdxGame extends ApplicationAdapter {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
         tank.render(batch);
-        target.render(batch);
+         target.render(batch);
         batch.end();
     }
 
     private void update(float dt) {
         tank.update(dt);
-        if (tank.getBullet().getIsActive()) {
-            if (Math.abs(target.getX() - tank.getBullet().getX() - 25) < 30 && Math.abs(target.getY() - tank.getBullet().getY() - 25) < 30) {
+         if (tank.getBullet().getIsActive()) {
+             if (Math.abs(target.getX() - tank.getBullet().getX() - 25) < 30 && Math.abs(target.getY() - tank.getBullet().getY() - 25) < 30) {
                 tank.getBullet().setActive(false);
-                target.placeTarget(random.nextFloat() * 768 + 256, random.nextFloat() * 208 + 256);
+                 target.placeTarget(random.nextFloat() * 768 + 256, random.nextFloat() * 208 + 256);
             }
         }
 
@@ -52,6 +52,6 @@ public class MyGdxGame extends ApplicationAdapter {
     public void dispose() {
         batch.dispose();
         tank.dispose();
-        target.dispose();
+         target.dispose();
     }
 }

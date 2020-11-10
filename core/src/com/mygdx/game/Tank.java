@@ -46,13 +46,13 @@ public class Tank {
         if (Gdx.input.isKeyPressed(Input.Keys.W)) {
             y += velocity * MathUtils.sinDeg(angle) * dt;
             x += velocity * MathUtils.cosDeg(angle) * dt;
-            checkBox();
+             checkBox();
 
         }
         if (Gdx.input.isKeyPressed(Input.Keys.S)) {
             y -= velocity * MathUtils.sinDeg(angle) * dt * 0.2f;
             x -= velocity * MathUtils.cosDeg(angle) * dt * 0.2f;
-            checkBox();
+             checkBox();
 
         }
         if (Gdx.input.isKeyPressed(Input.Keys.A)) {
@@ -76,11 +76,11 @@ public class Tank {
 
     }
 
-    private void checkBox() {
-        if (x < width / 2) x = width / 2;
-        if (y < width / 2) y = width / 2;
-        if (x > 1280 - 3 * width / 2) x = 1280 - 3 * width / 2;
-        if (y > 720 - 3 * width / 2) y = 720 - 3 * width / 2;
+     private void checkBox() {
+         if (x < width / 2) x = width / 2;
+         if (y < width / 2) y = width / 2;
+         if (x > 1280 - 3 * width / 2) x = 1280 - 3 * width / 2;
+         if (y > 720 - 3 * width / 2) y = 720 - 3 * width / 2;
     }
 
     public void render(SpriteBatch batch) {
